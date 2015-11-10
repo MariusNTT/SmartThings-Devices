@@ -432,14 +432,14 @@ def heatLevelDown(){
 }
 
 def quickSetHeat(degrees) {
-	setHeatingSetpoint(degrees, 1000)
+	setHeatingSetpoint(degrees, 100)
 }
 
-def setHeatingSetpoint(degrees, delay = 30000) {
+def setHeatingSetpoint(degrees, delay = 100) {
 	setHeatingSetpoint(degrees.toDouble(), delay)
 }
 
-def setHeatingSetpoint(Double degrees, Integer delay = 30000) {
+def setHeatingSetpoint(Double degrees, Integer delay = 100) {
 	log.trace "setHeatingSetpoint($degrees, $delay)"
 	def deviceScale = state.scale ?: 1
 	def deviceScaleString = deviceScale == 2 ? "C" : "F"
@@ -481,14 +481,14 @@ def coolLevelDown(){
 }
 
 def quickSetCool(degrees) {
-	setCoolingSetpoint(degrees, 1000)
+	setCoolingSetpoint(degrees, 100)
 }
 
-def setCoolingSetpoint(degrees, delay = 30000) {
+def setCoolingSetpoint(degrees, delay = 100) {
 	setCoolingSetpoint(degrees.toDouble(), delay)
 }
 
-def setCoolingSetpoint(Double degrees, Integer delay = 30000) {
+def setCoolingSetpoint(Double degrees, Integer delay = 100) {
     log.trace "setCoolingSetpoint($degrees, $delay)"
 	def deviceScale = state.scale ?: 1
 	def deviceScaleString = deviceScale == 2 ? "C" : "F"
